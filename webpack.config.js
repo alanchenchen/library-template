@@ -34,7 +34,17 @@ module.exports = {
                 loader: 'vue-loader',
                 options: {
                     loaders: {
-                        // other vue-loader options go here
+                        css: ExtractTextPlugin.extract({
+                            fallback: 'vue-style-loader',
+                            use: [
+                                {
+                                    loader: 'css-loader',
+                                    options: {
+                                        minimize: true
+                                    }
+                                }
+                            ]
+                        })
                     }
                 }
             }

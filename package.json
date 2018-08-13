@@ -1,6 +1,6 @@
 {
   "name": "library-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A webpack-config for building npm library",
   "main": "dist/library.js",
   "scripts": {

@@ -4,14 +4,15 @@ A template with webpack for building npm library
 
 > E-mail: 739709491@qq.com
 
-> version: 0.0.1
+> version: 0.0.2
 
-> date: 2018/08/08
+> date: 2018/08/13
 
 > 模板集成了插件打包，一键配置package.json等功能
 
 ## Feature
 * 提供完善的webpack打包配置文件，目前支持vue和原生js插件，不支持jsx文件。
+* 新增提取vue文件中的css到单独的css文件。
 * 提供一键配置包名和具体配置等功能，配置入口在config文件里的lib.config.js。
 * 一键配置支持命令行参数操作，有常用的4个命令行参数。
 
