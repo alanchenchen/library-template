@@ -1,18 +1,14 @@
 {
   "name": "library-template",
   "version": "0.0.2",
+  "author": "Alan Chen",
   "description": "A webpack-config for building npm library",
   "main": "dist/library.js",
-  "scripts": {
-    "config": "node config/index.js",
-    "build": "webpack --progress"
-  },
   "keywords": [
     "webpack",
     "library",
     "template"
   ],
-  "author": "Alan Chen",
   "license": "MIT",
   "private": false,
   "repository": {
@@ -20,6 +16,14 @@
     "url": "https://github.com/alanchenchen/library-template"
   },
   "homepage": "https://github.com/alanchenchen/library-template",
+  "bugs": {
+    "url": "https://github.com/alanchenchen/library-template/issues",
+    "email": "739709491@qq.com"
+  },
+  "scripts": {
+    "config": "node config/index.js",
+    "build": "webpack --progress"
+  },
   "dependencies": {
     "babel-runtime": "^6.26.0"
   },
@@ -39,6 +43,9 @@
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.8.1"
+  },
+  "engines": {
+    "node": ">= v8.11.1"
   },
   "babel": {
     "presets": [

@@ -35,6 +35,7 @@ const modifyAndWriteJSON = () => {
     const version = config.version || '0.0.1'
     const keywords = config.keywords || []
     const author = config.author || 'Alan Chen'
+    const nodeVersion = process.version 
     
     fs.readFile(sourcePath, 'utf8', (err, data) => {
         if(err) {
@@ -51,6 +52,13 @@ const modifyAndWriteJSON = () => {
         copyPackageJson.author = author
         copyPackageJson.repository = config.repository
         copyPackageJson.homepage = config.repository.url
+        copyPackageJson.bugs = {
+            url: `${config.repository.url}/issues`,
+            email: config.email
+        }
+        copyPackageJson.engines = {
+            node: `>= ${nodeVersion}`
+        }
         
         const newJson = JSON.stringify(copyPackageJson, null, 2) //格式化输出json文件
         
@@ -104,7 +112,7 @@ const deposit = () => {
         name: 'deposit',
         message: chalk.green('此操作将会用缓存文件覆盖根目录下的package.json'),
         choices: [
-            {name: '执行', value: true, short: chalk.green('覆盖源package.json')}, 
+            {name: '执行', value: true, short: chalk.green('覆盖')}, 
             {name: '取消', value: false, short: chalk.red('取消')}
         ]
     }])
@@ -118,12 +126,11 @@ const deposit = () => {
                             console.log(chalk`{yellow package.json文件覆盖失败}`)
                         }
                         else {
-                            console.log(chalk.bgBlue(`package.json文件覆盖成功！ 可以使用npm run buil打包，然后npm publish发布`))
+                            console.log(chalk.bgBlue(`package.json文件覆盖成功！ 可以使用npm run build打包，然后npm publish发布`))
                         }
                     })
                 }) 
         }
-
     })
 }
 
