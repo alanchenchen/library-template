@@ -5,7 +5,7 @@
 module.exports = {
     libraryName: 'library-template', // npm包名，首字母不允许大写，支持驼峰和短杆写法
     bundleName: 'library', // 打包后文件名，也是UMD script直接引入挂在windows对象的key名
-    version: '0.0.2', // 版本号
+    version: '0.0.3', // 版本号
     description: 'A webpack-config for building npm library', // 包描述
     keywords: ['webpack', 'library', 'template'], // 关键词
     author: 'Alan Chen', // 作者
