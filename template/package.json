@@ -1,6 +1,6 @@
 {
   "name": "library-template",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "author": "Alan Chen",
   "description": "A webpack-config for building npm library",
   "main": "dist/library.js",
@@ -9,7 +9,7 @@
     "library",
     "template"
   ],
-  "license": "MIT",
+  "license": "996.ICU",
   "private": false,
   "repository": {
     "type": "git",

@@ -2,11 +2,9 @@
 A template with webpack for building npm library
 > Author：Alan Chen
 
-> E-mail: 739709491@qq.com
+> version: 1.0.0
 
-> version: 0.0.3
-
-> date: 2018/12/19
+> date: 2019/5/29
 
 > 模板集成了插件打包，一键配置package.json和mocha测试等功能
 
@@ -30,8 +28,7 @@ A template with webpack for building npm library
 4. test文件夹存放的是测试文件，约定测试文件必须满足`*.test.js`，即必须以`.test.js`后缀名结尾。
 
 ## Usage
-> 强烈建议通过我仓库内的[alan-cli](https://github.com/alanchenchen/alan-cli)来使用，非常便捷！
-* `git clone https://github.com/alanchenchen/library-template.git`
+* 通过我仓库内的[alan-cli](https://github.com/alanchenchen/alan-cli)来使用，非常便捷！
 * `yarn` or `npm install` 安装依赖
 * `yarn run config` or `npm run config` 一键配置package.json，一般为如下操作顺序：
     1. `yarn run config g` or `npm run config g` 生成package.json缓存文件，注意这只是个临时文件，不会覆盖源package.json，可以通过`yarn run config rm`删除。
