@@ -9,10 +9,10 @@ const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
-
+const yaml = require('js-yaml')
 
 const ROOTPATH = process.cwd()
-const config = require('./lib.config')
+const config = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'lib.config.yml'), 'utf8'))
 const sourcePath = path.join(ROOTPATH, 'package.json')
 const copyPath = path.join(__dirname, 'temporary.json')
 
@@ -35,7 +35,7 @@ const modifyAndWriteJSON = () => {
     const version = config.version || '0.0.1'
     const keywords = config.keywords || []
     const author = config.author || 'Alan Chen'
-    const nodeVersion = process.version 
+    const nodeVersion = config.nodeVersion || process.version 
     
     fs.readFile(sourcePath, 'utf8', (err, data) => {
         if(err) {

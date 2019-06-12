@@ -2,27 +2,27 @@
 A template with webpack for building npm library
 > Author：Alan Chen
 
-> version: 1.0.0
+> version: 1.1.0
 
-> date: 2019/5/29
+> date: 2019/6/12
 
 > 模板集成了插件打包，一键配置package.json和mocha测试等功能
 
 ## Feature
 * 提供完善的webpack打包配置文件，目前支持vue和原生js插件，不支持jsx文件。
 * 新增提取vue文件中的css到单独的css文件。
-* 提供一键配置包名和具体配置等功能，配置入口在config文件里的lib.config.js。
+* 提供一键配置包名和具体配置等功能，配置入口在config目录的lib.config.yml。
 * 一键配置支持命令行参数操作，有常用的4个命令行参数。
 * 支持mocha测试，提供了trasvi-ci配置文件。
 
-## Dictionary tree
+## Directory tree
 ``` bash
     ├─config
     ├─dist
     └─src
     └─test
 ```
-1. config文件夹是一键配置package.json的代码，lib.config.js是配置入口，缓存文件也会存在config内。
+1. config文件夹是一键配置package.json的代码，lib.config.yml是配置入口，缓存文件也会存在config内。
 2. src文件夹内必须要存在index.js，作为webpack打包的入口。
 3. dist文件夹内是最终打包生成的js文件，bundle名称在config里配置。
 4. test文件夹存放的是测试文件，约定测试文件必须满足`*.test.js`，即必须以`.test.js`后缀名结尾。
