@@ -1,9 +1,11 @@
 const path = require('path')
+const fs = require('fs')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')//压缩混淆
 const CleanWebpackPlugin = require('clean-webpack-plugin')//清除打包后的重复chunk
 const ROOTPATH = process.cwd()
-const bundleName = require('./config/lib.config.js').bundleName
+const yaml = require('js-yaml')
+const bundleName = yaml.safeLoad(fs.readFileSync(path.join(__dirname, './config/lib.config.yml'), 'utf8')).bundleName
 
 module.exports = {
     entry: {
