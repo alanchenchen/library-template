@@ -15,14 +15,14 @@ module.exports = {
             /**
              * 通过询问用户是否使用框架，然后给package.json写入useFrame字段.
              */
-            const { useFrame } = await prompt[
+            const { useFrame } = await prompt([
                 {
                     type: "list",
                     name: "useFrame",
                     message: "Do you want use framework such as vue or svelte?",
                     choices: ["yes", "no"]
                 }
-            ];
+            ]);
             if (useFrame === "yes") {
                 ifUseFrame = true;
             } else if (useFrame === "no") {

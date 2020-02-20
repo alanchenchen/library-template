@@ -10,7 +10,7 @@ import commonjs from "rollup-plugin-commonjs";
 import pkg from "./package.json";
 
 /**
- * 因为ts的很多插件对svelte、vue框架兼容报错，只有ollup-plugin-typescript兼容。
+ * 因为ts的很多插件对svelte、vue框架兼容报错，只有rollup-plugin-typescript兼容。
  * 但是只有@wessberg/rollup-plugin-ts会生成对应的type文件。
  * 所以对于不同的npm包，采用不同的ts来打包，当开发纯js逻辑的包时，生成type文件，点当开发框架的包时，只兼容打包，不生成type文件。
  */
