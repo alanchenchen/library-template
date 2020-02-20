@@ -6,14 +6,16 @@ libraryName: library-template
 # 打包后文件名，也是UMD script直接引入挂在windows对象的key名
 bundleName: library 
 # 版本号
-version: 1.1.0
+version: 1.2.0
 # node版本
 nodeVersion: 8.16.0
+# license
+license: 996.ICU
 # 包描述
-description: A webpack-config for building npm library
+description: A rollp-config for building npm library
 # 关键词
 keywords:
-  - webpack
+  - rollup
   - library
   - template
 # 作者

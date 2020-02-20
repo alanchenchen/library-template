@@ -1,16 +1,52 @@
 {
   "name": "library-template",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Alan Chen",
-  "description": "A webpack-config for building npm library",
+  "description": "A rollp-config for building npm library",
+  "module": "dist/library.mjs",
   "main": "dist/library.js",
+  "scripts": {
+    "config": "ts-node cli/index.ts",
+    "build": "rollup -c",
+    "test": "mocha --require ts-node/register --watch-extensions ts,js 'test/**/*.test.{ts,js}'",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "license": "8.16.0",
+  "private": false,
+  "useFrame": true,
+  "devDependencies": {
+    "@alanchenchen/commandlineflag": "^0.0.6",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.7.4",
+    "@wessberg/rollup-plugin-ts": "^1.2.17",
+    "chalk": "^3.0.0",
+    "inquirer": "^7.0.4",
+    "js-yaml": "^3.13.1",
+    "mocha": "^7.0.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-only": "^2.0.0",
+    "rollup-plugin-filesize": "^6.2.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-vue": "^5.1.6",
+    "svelte": "^3.18.2",
+    "ts-node": "^8.6.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "engines": {
+    "node": ">= 8.16.0"
+  },
   "keywords": [
-    "webpack",
+    "rollup",
     "library",
     "template"
   ],
-  "license": "996.ICU",
-  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/alanchenchen/library-template"
@@ -19,51 +55,5 @@
   "bugs": {
     "url": "https://github.com/alanchenchen/library-template/issues",
     "email": "739709491@qq.com"
-  },
-  "scripts": {
-    "config": "node config/index.js",
-    "build": "webpack --progress",
-    "test": "mocha test/*.test.js"
-  },
-  "dependencies": {
-    "babel-runtime": "^6.26.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "chalk": "^2.4.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.4",
-    "inquirer": "^6.1.0",
-    "js-yaml": "^3.13.1",
-    "mocha": "^5.2.0",
-    "uglifyjs-webpack-plugin": "^1.0.1",
-    "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.4.4",
-    "webpack": "^3.8.1"
-  },
-  "engines": {
-    "node": ">= v8.11.1"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "stage-3"
-    ],
-    "plugins": [
-      [
-        "transform-runtime",
-        {
-          "polyfill": false,
-          "regenerator": true,
-          "moduleName": "babel-runtime"
-        }
-      ]
-    ]
   }
 }
