@@ -21,6 +21,13 @@ export default (sourcePath: string, copyPath: string, config: any) => {
         }
         let copyPackageJson = JSON.parse(data);
 
+        /**
+         * 如果不打包框架插件，会生成type文件，则自动插入types字段.
+         */
+        if (!copyPackageJson.useFrame) {
+            copyPackageJson.types = "dist/index.d.ts";
+        }
+
         copyPackageJson.name = config.libraryName;
         copyPackageJson.version = version;
         copyPackageJson.description = config.description;
