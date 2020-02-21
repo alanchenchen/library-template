@@ -2,7 +2,7 @@
 A template with rollup for building npm library
 > Author：Alan Chen
 
-> version: 1.2.0
+> version: 1.2.1
 
 > date: 2020/2/20
 
