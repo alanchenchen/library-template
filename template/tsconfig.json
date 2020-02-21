@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "ESNext",
+        "module": "CommonJS",
         "esModuleInterop": true,
         "allowJs": true,
         "checkJs": true,
