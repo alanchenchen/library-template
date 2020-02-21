@@ -13,7 +13,7 @@ export default (sourcePath: string, copyPath: string, config: any) => {
     const keywords = config.keywords || [];
     const author = config.author || "Alan Chen";
     const nodeVersion = config.nodeVersion || process.version;
-    const license = config.nodeVersion || "MIT";
+    const license = config.license || "MIT";
 
     fs.readFile(sourcePath, "utf8", (err: Error, data: string) => {
         if (err) {
