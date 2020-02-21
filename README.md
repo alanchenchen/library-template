@@ -42,8 +42,9 @@ A template with rollup for building npm library
 * 可以在travis-ci官网开启github对应仓库的自动化脚本。
 
 ## Attentions
-1. 一定要善用`yarn run config`命令，不熟悉参数，可以通过`yarn run config`或者`yarn run config h`来查看使用说明。
-2. `yarn run config` 命令参数如下
+1. 由于很多rollup-ts插件目前存在很多问题，所以导致当前模版对vue、svelte框架打包和纯ts逻辑打包采用了不同的插件。目前有一个弊端，当你打包框架插件时，ts文件是不会自动生产type文件，而且一定要通过alan-cli初始化项目，在初始化最后一个提问中选择是否打包框架插件。如果你不使用`alan-cli`，则需要在package.json里加入一个`useFrame`的字段，具体逻辑移步`template.hooks.js`。
+2. 一定要善用`yarn run config`命令，不熟悉参数，可以通过`yarn run config`或者`yarn run config h`来查看使用说明。
+3. `yarn run config` 命令参数如下
 ``` 
     Usage:
 
@@ -52,5 +53,5 @@ A template with rollup for building npm library
         d  apply the temporary.json to root path
         h  show the config command help
 ```
-3. 最好不要手动更改源package.json，如果一定要修改，只能添加key字段，不要删除。否则一键配置会出错。
+4. 最好不要手动更改源package.json，如果一定要修改，只能添加key字段，不要删除。否则一键配置会出错。
 
