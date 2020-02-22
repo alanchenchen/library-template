@@ -54,4 +54,5 @@ A template with rollup for building npm library
         h  show the config command help
 ```
 4. 最好不要手动更改源package.json，如果一定要修改，只能添加key字段，不要删除。否则一键配置会出错。
+5. 如果需要插件在webpack项目里使用，则考虑去除package.json里的module字段，而且把ts的target改成es3，因为很多webpack项目的配置，是不会对node_modules的包做babel转译的。但是要是在rollup项目里使用，建议保留module字段。
 
